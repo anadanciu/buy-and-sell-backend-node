@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "npx nodemon --exec npx babel-node src/server.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.22.6",
+    "@hapi/boom": "^10.0.1",
+    "@hapi/hapi": "^21.3.2",
+    "mysql": "^2.18.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/node": "^7.22.6",
+    "@babel/plugin-transform-runtime": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "nodemon": "^3.0.1"
+  }
+}
