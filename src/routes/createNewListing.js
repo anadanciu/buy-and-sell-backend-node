@@ -1,16 +1,18 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuid } from "uuid";
+import * as admin from "firebase-admin";
 import { db } from "../database";
 
 export const createNewListingRoute = {
   method: "POST",
   path: "/api/listings",
   handler: async (req, h) => {
-    const id = uuidv4();
+    const id = uuid();
     const { name = "", description = "", price = 0 } = req.payload;
-    const userId = "12345";
+    const token = req.headers.authtoken;
+    const user = await admin.auth().verifyIdToken(token);
+    const userId = user.user_id;
     const views = 0;
 
-    console.warn(id, name, description, price, userId, views);
     try {
       await db.query(
         `INSERT INTO listings (id, name, description, price, user_id, views)

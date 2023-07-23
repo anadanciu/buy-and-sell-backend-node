@@ -6,6 +6,7 @@ export const getListingRoute = {
   path: "/api/listings/{id}",
   handler: async (req, h) => {
     const id = req.params.id;
+    console.log("getListing + id: ", id);
     const { results } = await db.query("SELECT * FROM listings WHERE id=?", [
       id,
     ]); //doing it with the ? and not string concatenation as in js, is beacuse  the ? prevents the sql injection
