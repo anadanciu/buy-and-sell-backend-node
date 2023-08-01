@@ -8,3 +8,7 @@ postman - tests with localhost, get, post
 install mySQl workbench to insert and select listings
 npm install mysql in terminal
 npm install uuid
+
+look for commands in package.json, under "scripts" key
+
+gcloud app deploy - the command to deploy our build directory

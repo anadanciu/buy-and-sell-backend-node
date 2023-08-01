@@ -1,15 +1,23 @@
 {
+  "engines": {
+    "node": "16.20.0",
+    "npm": "8.19.4"
+  },
   "scripts": {
-    "dev": "npx nodemon --exec npx babel-node src/server.js"
+    "dev": "npx nodemon --exec npx babel-node src/server.js",
+    "build": "babel ./src --out-dir ./build",
+    "start": "node ./build/server.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.22.6",
     "@hapi/boom": "^10.0.1",
     "@hapi/hapi": "^21.3.2",
+    "dotenv": "^16.3.1",
     "firebase-admin": "^11.10.1",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.9",
     "@babel/core": "^7.22.9",
     "@babel/node": "^7.22.6",
     "@babel/plugin-transform-runtime": "^7.22.9",
