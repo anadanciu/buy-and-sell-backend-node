@@ -7,10 +7,10 @@ host: "34.116.142.123",
   password: "nanes-sql", //or 1QRtana1234!
   database: "buy-and-sell",
 
- host: "localhost", -is the one from workbench localhost33:06
+ host: "localhost", 
   user: "hapi-server",
   password: "abc123!DaBc?rwg4554gv_%gfeR", //or nanes-sql or 1QRtana1234!
-  database: "buy-an-sell",
+  database: "buy-an-sell", -is the one from workbench localhost33:06
 */
 
 export const db = {

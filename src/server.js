@@ -13,8 +13,8 @@ let server;
 
 const start = async () => {
   server = Hapi.server({
-    port: 8080,
-    host: "0.0.0.0",
+    port: 8000,
+    host: "localhost",
   });
 
   db.connect();
