@@ -13,20 +13,21 @@ host: "34.116.142.123",
   password: "nanes-sql", //or 1QRtana1234!
   database: "buy-and-sell",
 
- host: "localhost", -is the one from workbench localhost33:06
+ host: "localhost", 
   user: "hapi-server",
   password: "abc123!DaBc?rwg4554gv_%gfeR", //or nanes-sql or 1QRtana1234!
-  database: "buy-an-sell",
+  database: "buy-an-sell", -is the one from workbench localhost33:06
 */
 
 var db = {
   connect: function connect() {
     connection = _mysql["default"].createConnection({
-      host: process.env.DB_HOST,
+      host: process.env.INSTANCE_HOST,
+      port: process.env.DB_PORT,
       user: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
-      socketPath: process.env.DB_SOCKET
+      socketPath: process.env.INSTANCE_UNIX_SOCKET
     });
   },
   query: function query(queryString, escapedValues) {

@@ -1,9 +1,12 @@
 runtime: nodejs
 env: flexible
 beta_settings:
-  cloud_sql_instances: buy-and-sell-48147:europe-central2:buy-and-sell-db
+  cloud_sql_instances: buy-and-sell-48147:europe-central2:bas-db
 env_variables:
-  DB_USER: hapi-server
-  DB_PASS: 1QRtana1234!
-  DB_NAME: buy-and-sell
-  DB_SOCKET: /cloudsql/buy-and-sell-48147:europe-central2:buy-and-sell-db
+  DB_USER: root
+  DB_PASS: bas-db-1234
+  DB_NAME: bas-db
+  DB_SOCKET: /cloudsql/buy-and-sell-48147:europe-central2:bas-db
+  INSTANCE_HOST: "34.116.245.46"
+  DB_PORT: "3306"
+  INSTANCE_UNIX_SOCKET: "/cloudsql/buy-and-sell-48147:europe-central2:bas-db"

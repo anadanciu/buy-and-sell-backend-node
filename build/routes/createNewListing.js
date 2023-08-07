@@ -33,7 +33,7 @@ var createNewListingRoute = {
             views = 0;
             _context.prev = 8;
             _context.next = 11;
-            return _database.db.query("INSERT INTO listings (id, name, description, price, user_id, views) VALUES (?, ?, ?, ?, ?, ?)", [id, name, description, price, userId, views]);
+            return _database.db.query("INSERT INTO listings (id, name, description, price, user_id, views)\n    VALUES (?, ?, ?, ?, ?, ?)", [id, name, description, price, userId, views]);
           case 11:
             _context.next = 16;
             break;

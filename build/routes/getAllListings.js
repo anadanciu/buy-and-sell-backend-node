@@ -17,12 +17,12 @@ var getAllListingsRoute = {
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            console.log("it gets here");
-            _context.next = 3;
+            _context.next = 2;
             return _database.db.query("SELECT * FROM listings");
-          case 3:
+          case 2:
             _yield$db$query = _context.sent;
             results = _yield$db$query.results;
+            console.log("it gets to api/listings, fetching ".concat(results));
             return _context.abrupt("return", results);
           case 6:
           case "end":

@@ -16,11 +16,12 @@ host: "34.116.142.123",
 export const db = {
   connect: () => {
     connection = mysql.createConnection({
-      host: process.env.DB_HOST,
+      host: process.env.INSTANCE_HOST,
+      port: process.env.DB_PORT,
       user: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
-      socketPath: process.env.DB_SOCKET,
+      socketPath: process.env.INSTANCE_UNIX_SOCKET,
     });
   },
   query: (queryString, escapedValues) =>
