@@ -11,6 +11,7 @@ export const getUserListingsRoute = {
       "SELECT * FROM listings WHERE user_id=?",
       [userId]
     );
+    console.log(`it gets to /api/users/{userId}/listings`);
     return results;
   },
 };

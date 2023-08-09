@@ -5,6 +5,7 @@ import { getUserListingsRoute } from "./getUserListings";
 import { createNewListingRoute } from "./createNewListing";
 import { updatedListingRoute } from "./updateListing";
 import { deleteListingRoute } from "./deleteListing";
+import { staticFilesRoute, filesRoute } from "./files";
 
 export default [
   getAllListingsRoute,
@@ -14,4 +15,6 @@ export default [
   createNewListingRoute,
   updatedListingRoute,
   deleteListingRoute,
+  staticFilesRoute,
+  ...filesRoute,
 ];

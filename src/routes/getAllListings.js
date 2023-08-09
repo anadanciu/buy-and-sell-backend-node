@@ -5,7 +5,7 @@ export const getAllListingsRoute = {
   path: "/api/listings",
   handler: async (req, h) => {
     const { results } = await db.query("SELECT * FROM listings");
-    console.log(`it gets to api/listings, fetching ${results}`);
+    //console.log(`it gets to api/listings, fetching ${results}`);
     return results;
   },
 };

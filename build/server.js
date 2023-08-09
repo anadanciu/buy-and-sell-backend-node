@@ -6,6 +6,7 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _dotenv = _interopRequireDefault(require("dotenv"));
 var _hapi = _interopRequireDefault(require("@hapi/hapi"));
+var _inert = _interopRequireDefault(require("@hapi/inert"));
 var _routes = _interopRequireDefault(require("./routes"));
 var _database = require("./database");
 var admin = _interopRequireWildcard(require("firebase-admin"));
@@ -30,11 +31,14 @@ var start = /*#__PURE__*/function () {
           _context.next = 4;
           return server.start();
         case 4:
+          _context.next = 6;
+          return server.register(_inert["default"]);
+        case 6:
           _routes["default"].forEach(function (route) {
             return server.route(route);
           });
           console.log("server is listening at ".concat(server.info.uri));
-        case 6:
+        case 8:
         case "end":
           return _context.stop();
       }

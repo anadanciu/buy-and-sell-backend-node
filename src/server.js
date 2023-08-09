@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 import Hapi from "@hapi/hapi";
+import inert from "@hapi/inert";
 import routes from "./routes";
 import { db } from "./database";
 import * as admin from "firebase-admin";
@@ -19,6 +20,7 @@ const start = async () => {
 
   db.connect();
   await server.start();
+  await server.register(inert);
   routes.forEach((route) => server.route(route));
   console.log(`server is listening at ${server.info.uri}`);
 };
