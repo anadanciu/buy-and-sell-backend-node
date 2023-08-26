@@ -13,18 +13,19 @@ var getAllListingsRoute = {
   path: "/api/listings",
   handler: function () {
     var _handler = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, h) {
-      var _yield$db$query, results;
+      var _yield$connection$doQ, results;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return _database.db.query("SELECT * FROM listings");
-          case 2:
-            _yield$db$query = _context.sent;
-            results = _yield$db$query.results;
+            console.log("it gets here");
+            _context.next = 3;
+            return _database.connection.doQuery("SELECT * FROM listings");
+          case 3:
+            _yield$connection$doQ = _context.sent;
+            results = _yield$connection$doQ.results;
             console.log("it gets to api/listings, fetching ".concat(results));
             return _context.abrupt("return", results);
-          case 6:
+          case 7:
           case "end":
             return _context.stop();
         }

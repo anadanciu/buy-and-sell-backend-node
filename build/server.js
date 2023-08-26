@@ -27,7 +27,7 @@ var start = /*#__PURE__*/function () {
             port: 8080,
             host: "0.0.0.0"
           });
-          _database.db.connect();
+          _database.connection.connect();
           _context.next = 4;
           return server.start();
         case 4:
@@ -64,7 +64,7 @@ process.on("SIGINT", /*#__PURE__*/(0, _asyncToGenerator2["default"])( /*#__PURE_
         });
       case 2:
         console.log("Stopping server...");
-        _database.db.end();
+        _database.connection.end();
         console.log("Server stopped!");
         process.exit(0);
       case 6:

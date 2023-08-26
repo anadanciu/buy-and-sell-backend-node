@@ -29,7 +29,7 @@ var deleteListingRoute = {
             user = _context.sent;
             userId = user.user_id; //console.log(req.params);
             _context.next = 8;
-            return _database.db.query("DELETE FROM listings WHERE id=? AND user_id=?", [id, userId]);
+            return _database.connection.doQuery("DELETE FROM listings WHERE id=? AND user_id=?", [id, userId]);
           case 8:
             return _context.abrupt("return", {
               message: "Success!"
