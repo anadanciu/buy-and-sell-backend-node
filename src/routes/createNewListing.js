@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import * as admin from "firebase-admin";
-import { db } from "../database";
+import { connection } from "../database";
 
 export const createNewListingRoute = {
   method: "POST",
@@ -14,7 +14,7 @@ export const createNewListingRoute = {
     const views = 0;
 
     try {
-      await db.query(
+      await connection.doQuery(
         `INSERT INTO listings (id, name, description, price, user_id, views)
     VALUES (?, ?, ?, ?, ?, ?)`,
         [id, name, description, price, userId, views]

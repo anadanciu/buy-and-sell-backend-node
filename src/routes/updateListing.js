@@ -1,4 +1,4 @@
-import { db } from "../database";
+import { connection } from "../database";
 import * as admin from "firebase-admin";
 
 export const updatedListingRoute = {
@@ -12,12 +12,12 @@ export const updatedListingRoute = {
 
     const userId = user.user_id;
 
-    await db.query(
+    await connection.doQuery(
       `UPDATE listings SET name=?, description=?, price=?  WHERE id=? AND user_id=?`,
       [name, description, price, id, userId]
     );
 
-    const { results } = await db.query(
+    const { results } = await connection.doQuery(
       `SELECT * FROM listings WHERE id=? AND user_id=?`,
       [id, userId]
     );
