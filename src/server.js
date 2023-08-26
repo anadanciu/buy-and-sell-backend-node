@@ -16,7 +16,6 @@ const start = async () => {
     port: 8000,
     host: "localhost",
   });
-
   connection.connect();
   await server.start();
   routes.forEach((route) => server.route(route));
