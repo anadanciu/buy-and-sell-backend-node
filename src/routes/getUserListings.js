@@ -1,4 +1,4 @@
-import { connection } from "../database";
+import { db } from "../database";
 import * as admin from "firebase-admin";
 
 export const getUserListingsRoute = {
@@ -7,7 +7,7 @@ export const getUserListingsRoute = {
   handler: async (req, h) => {
     const token = req.headers.authtoken;
     const userId = req.params.userId;
-    const { results } = await connection.doQuery(
+    const { results } = await db.query(
       "SELECT * FROM listings WHERE user_id=?",
       [userId]
     );

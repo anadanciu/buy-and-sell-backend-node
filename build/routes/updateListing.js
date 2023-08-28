@@ -17,7 +17,7 @@ var updatedListingRoute = {
   path: "/api/listings/{id}",
   handler: function () {
     var _handler = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, h) {
-      var id, _req$payload, name, description, price, token, user, userId, _yield$connection$doQ, results;
+      var id, _req$payload, name, description, price, token, user, userId, _yield$db$query, results;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -30,13 +30,13 @@ var updatedListingRoute = {
             user = _context.sent;
             userId = user.user_id;
             _context.next = 9;
-            return _database.connection.doQuery("UPDATE listings SET name=?, description=?, price=?  WHERE id=? AND user_id=?", [name, description, price, id, userId]);
+            return _database.db.query("UPDATE listings SET name=?, description=?, price=?  WHERE id=? AND user_id=?", [name, description, price, id, userId]);
           case 9:
             _context.next = 11;
-            return _database.connection.doQuery("SELECT * FROM listings WHERE id=? AND user_id=?", [id, userId]);
+            return _database.db.query("SELECT * FROM listings WHERE id=? AND user_id=?", [id, userId]);
           case 11:
-            _yield$connection$doQ = _context.sent;
-            results = _yield$connection$doQ.results;
+            _yield$db$query = _context.sent;
+            results = _yield$db$query.results;
             return _context.abrupt("return", results[0]);
           case 14:
           case "end":

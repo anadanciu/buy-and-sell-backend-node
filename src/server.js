@@ -3,7 +3,7 @@ dotenv.config();
 import Hapi from "@hapi/hapi";
 import inert from "@hapi/inert";
 import routes from "./routes";
-import { connection } from "./database";
+import { db } from "./database";
 import * as admin from "firebase-admin";
 import credentials from "../credentials.json";
 admin.initializeApp({
@@ -17,7 +17,7 @@ const start = async () => {
     port: 8080,
     host: "0.0.0.0",
   });
-  connection.connect();
+  db.connect();
   await server.start();
   await server.register(inert);
   routes.forEach((route) => server.route(route));
@@ -33,7 +33,7 @@ process.on("unhandledRejection", (err) => {
 process.on("SIGINT", async () => {
   await server.stop({ timeout: 10000 });
   console.log("Stopping server...");
-  connection.end();
+  db.end();
   console.log("Server stopped!");
   process.exit(0);
 });

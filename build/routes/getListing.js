@@ -14,17 +14,17 @@ var getListingRoute = {
   path: "/api/listings/{id}",
   handler: function () {
     var _handler = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, h) {
-      var id, _yield$connection$doQ, results, listing;
+      var id, _yield$db$query, results, listing;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             id = req.params.id;
             console.log("getListing + id: ", id);
             _context.next = 4;
-            return _database.connection.doQuery("SELECT * FROM listings WHERE id=?", [id]);
+            return _database.db.query("SELECT * FROM listings WHERE id=?", [id]);
           case 4:
-            _yield$connection$doQ = _context.sent;
-            results = _yield$connection$doQ.results;
+            _yield$db$query = _context.sent;
+            results = _yield$db$query.results;
             //doing it with the ? and not string concatenation as in js, is beacuse  the ? prevents the sql injection
             listing = results[0];
             if (listing) {

@@ -17,17 +17,17 @@ var getUserListingsRoute = {
   path: "/api/users/{userId}/listings",
   handler: function () {
     var _handler = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, h) {
-      var token, userId, _yield$connection$doQ, results;
+      var token, userId, _yield$db$query, results;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             token = req.headers.authtoken;
             userId = req.params.userId;
             _context.next = 4;
-            return _database.connection.doQuery("SELECT * FROM listings WHERE user_id=?", [userId]);
+            return _database.db.query("SELECT * FROM listings WHERE user_id=?", [userId]);
           case 4:
-            _yield$connection$doQ = _context.sent;
-            results = _yield$connection$doQ.results;
+            _yield$db$query = _context.sent;
+            results = _yield$db$query.results;
             console.log("it gets to /api/users/{userId}/listings");
             return _context.abrupt("return", results);
           case 8:
