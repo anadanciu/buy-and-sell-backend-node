@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 
 credentials.json
+cloud-sql-proxy.exe
+buy-and-sell-48147-credentials.json
